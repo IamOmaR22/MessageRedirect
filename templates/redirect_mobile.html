@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <script>
+        window.onload = function() {
+            var code = "{{ code }}";
+            if (code) {
+                var url = "sms:888222?body=" + code;
+                window.location.href = url;
+            } else {
+                window.location.href = "{% url 'index' %}?error=missing_c";
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html>
