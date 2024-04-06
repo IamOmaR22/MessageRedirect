@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chipotle Message Sender</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chipotle Message Sender</h1>
+    {% if error_message %}
+        <p class="error">{{ error_message }}</p>
+    {% endif %}
+    <form method="get" action="/chipotle">
+        <label for="message">Enter your message:</label>
+        <input type="text" id="message" name="c" placeholder="Type your message here">
+        <input type="submit" value="Send Message">
+    </form>
+</body>
+</html>
